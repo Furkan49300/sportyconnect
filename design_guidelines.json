@@ -1,0 +1,167 @@
+{
+  "identity": {
+    "name": "E1_Sport_Pro",
+    "archetype": "The Performance Pro",
+    "core_philosophy": "Fusion over Imitation. Every pixel must sweat.",
+    "vibe": "High-Voltage, Kinetic, Tactical.",
+    "emotional_goal": "Make the user feel like an elite athlete, even if they're just playing casual frisbee."
+  },
+  "typography": {
+    "headings": {
+      "family": "Barlow Condensed",
+      "weights": ["600", "700", "800"],
+      "usage": "All section headers, hero titles, stats.",
+      "letter_spacing": "tracking-tighter",
+      "transform": "uppercase",
+      "google_font_import": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Manrope:wght@400;500;600&display=swap"
+    },
+    "body": {
+      "family": "Manrope",
+      "weights": ["400", "500", "600"],
+      "usage": "Paragraphs, UI labels, inputs.",
+      "letter_spacing": "tracking-normal"
+    },
+    "rules": [
+      "No 'Inter' or 'Roboto'.",
+      "Headings must be TIGHT (tracking-tighter) and BOLD.",
+      "Data numbers (participants, dates) should use Heading font for impact."
+    ]
+  },
+  "colors": {
+    "theme_strategy": "Hybrid",
+    "primary_mode": "light",
+    "palette": {
+      "primary": {
+        "name": "Volt Lime",
+        "hex": "#CCFF00",
+        "tailwind": "bg-[#CCFF00] text-black",
+        "usage": "Primary CTAs, Active States, Highlights."
+      },
+      "secondary": {
+        "name": "Carbon Black",
+        "hex": "#0A0A0A",
+        "tailwind": "bg-[#0A0A0A] text-white",
+        "usage": "Headers, Footers, Primary Buttons (in light mode)."
+      },
+      "accent": {
+        "name": "Electric Blue",
+        "hex": "#007AFF",
+        "tailwind": "text-[#007AFF]",
+        "usage": "Links, Icons, Secondary Highlights."
+      },
+      "background": {
+        "light": "#FFFFFF",
+        "dark": "#050505",
+        "subtle": "#F5F5F5"
+      },
+      "surface": {
+        "light": "#FFFFFF",
+        "dark": "#111111"
+      },
+      "error": "#FF3B30",
+      "success": "#34C759"
+    },
+    "gradients": {
+      "hero_overlay": "bg-gradient-to-b from-transparent via-black/50 to-black",
+      "card_hover": "hover:bg-gradient-to-br hover:from-white hover:to-gray-50"
+    }
+  },
+  "layout_strategy": {
+    "grid_system": "The Bento Grid (Mode A for Marketing, Mode B for Dashboard)",
+    "spacing": "Generous. Use p-8 to p-12 for sections.",
+    "containers": "Max-width-7xl for main content. Full width for Heros.",
+    "border_radius": {
+      "buttons": "rounded-none",
+      "cards": "rounded-sm",
+      "inputs": "rounded-none"
+    },
+    "z_index": {
+      "sticky_nav": "z-50",
+      "modals": "z-[100]",
+      "toasts": "z-[200]"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-primary text-primary-foreground hover:bg-primary/90 h-12 px-8 font-bold uppercase tracking-wider text-sm skew-x-[-10deg] transition-all duration-300 hover:skew-x-0",
+      "secondary": "border-2 border-black bg-transparent hover:bg-black hover:text-white h-12 px-8 font-bold uppercase tracking-wider text-sm",
+      "ghost": "hover:bg-accent/10 hover:text-accent font-medium uppercase tracking-wide"
+    },
+    "cards": {
+      "style": "The 'Tracing Beam' or 'Grid Border'.",
+      "base": "bg-card border border-border/40 hover:border-primary/50 transition-colors duration-300",
+      "hover": "hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1"
+    },
+    "inputs": {
+      "style": "Flat, bottom-border focused or solid block.",
+      "classes": "h-12 bg-secondary/10 border-transparent focus:border-primary focus:ring-0 rounded-none font-medium"
+    },
+    "navigation": {
+      "style": "Sticky glassmorphism.",
+      "classes": "backdrop-blur-md bg-white/80 border-b border-black/5"
+    }
+  },
+  "visual_enhancers": {
+    "textures": "Use subtle noise overlay on dark sections.",
+    "motion": {
+      "library": "framer-motion",
+      "recommendations": [
+        "Staggered entrance for list items.",
+        "Parallax on Hero images.",
+        "Marquee for sport categories."
+      ]
+    },
+    "icons": {
+      "library": "lucide-react",
+      "style": "Stroke width 1.5px or 2px. Sharp edges if possible."
+    }
+  },
+  "pages": {
+    "landing": {
+      "hero": {
+        "type": "Full screen image with overlay.",
+        "headline": "TEXT-8XL BARLOW CONDENSED UPPERCASE.",
+        "image_url": "https://images.unsplash.com/photo-1744959438109-714e5d853a43?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHwzfHxzb2NjZXIlMjBiYXNrZXRiYWxsJTIwdGVubmlzJTIwdm9sbGV5YmFsbCUyMGN5Y2xpbmclMjBoaWtpbmclMjBhY3Rpb258ZW58MHx8fHwxNzczMzkyMTkxfDA&ixlib=rb-4.1.0&q=85",
+        "cta": "JOIN THE SQUAD"
+      },
+      "features": "Bento grid layout highlighting 'Real-time Chat', 'Skill Matching', 'Local Events'.",
+      "categories": "Horizontal scroll or Marquee of sports."
+    },
+    "auth": {
+      "provider": "Emergent-managed Google social login.",
+      "layout": "Split screen. Left: energetic image. Right: Clean form.",
+      "image_url": "https://images.unsplash.com/photo-1677131923796-0357b68fc7a1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHwxfHxzb2NjZXIlMjBiYXNrZXRiYWxsJTIwdGVubmlzJTIwdm9sbGV5YmFsbCUyMGN5Y2xpbmclMjBoaWtpbmclMjBhY3Rpb258ZW58MHx8fHwxNzczMzkyMTkxfDA&ixlib=rb-4.1.0&q=85"
+    },
+    "dashboard": {
+      "layout": "Sidebar (collapsible) + Density Grid.",
+      "widgets": "Upcoming Activities, Recent Chat, My Stats.",
+      "colors": "White background, gray surface for sidebar."
+    },
+    "activity_detail": {
+      "layout": "Hero Header (Map placeholder + Info).",
+      "participants": "Avatar stack + List.",
+      "chat": "Floating or Sidebar integrated."
+    }
+  },
+  "accessibility": {
+    "contrast": "Ensure primary green/lime text is on DARK background only. On light background, use Black.",
+    "focus_states": "Ring-2 ring-primary ring-offset-2.",
+    "aria": "All interactive elements must have aria-labels."
+  },
+  "instructions_to_main_agent": [
+    "Install framer-motion: `yarn add framer-motion`.",
+    "Add Google Fonts link to `index.html` head.",
+    "Update `tailwind.config.js` to include new colors and fonts.",
+    "Use `lucide-react` for icons.",
+    "For 'No Map' constraint: Use stylized 'Location' cards with city/venue text.",
+    "Implement 'Emergent-managed Google social login' using provided auth context/library.",
+    "Use Shadcn components but override rounded-md with rounded-sm or rounded-none for the sporty look.",
+    "Ensure 'Data-TestId' attributes are added to all interactive elements."
+  ],
+  "universal_guidelines": [
+    "Do not use gradients for text.",
+    "Avoid 'Inter' font for headings.",
+    "Use 2x padding than you think is necessary.",
+    "Micro-interactions are mandatory."
+  ]
+}
