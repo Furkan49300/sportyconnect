@@ -67,9 +67,8 @@ export default function Landing() {
             ) : (
               <button
                 onClick={() => {
-                  // REMINDER: DO NOT HARDCODE THE URL, OR ADD ANY FALLBACKS OR REDIRECT URLS, THIS BREAKS THE AUTH
-                  const redirectUrl = window.location.origin + '/dashboard';
-                  window.location.href = `https://auth.emergentagent.com/?redirect=${encodeURIComponent(redirectUrl)}`;
+                  const redirectUrl = '/dashboard';
+                  window.location.href = `${process.env.REACT_APP_BACKEND_URL}/api/auth/login/google?redirect=${encodeURIComponent(redirectUrl)}`;
                 }}
                 className="btn-volt h-14 px-10 text-sm font-heading font-bold tracking-wider flex items-center gap-2 mx-auto"
                 data-testid="hero-join-btn"
@@ -150,9 +149,8 @@ export default function Landing() {
             ) : (
               <button
                 onClick={() => {
-                  // REMINDER: DO NOT HARDCODE THE URL, OR ADD ANY FALLBACKS OR REDIRECT URLS, THIS BREAKS THE AUTH
-                  const redirectUrl = window.location.origin + '/dashboard';
-                  window.location.href = `https://auth.emergentagent.com/?redirect=${encodeURIComponent(redirectUrl)}`;
+                  const redirectUrl = '/dashboard';
+                  window.location.href = `${process.env.REACT_APP_BACKEND_URL}/api/auth/login/google?redirect=${encodeURIComponent(redirectUrl)}`;
                 }}
                 className="btn-volt h-14 px-10 text-sm font-heading font-bold tracking-wider"
                 data-testid="cta-signup-btn"

@@ -369,9 +369,8 @@ export default function ActivityDetail() {
               ) : (
                 <button
                   onClick={() => {
-                    // REMINDER: DO NOT HARDCODE THE URL, OR ADD ANY FALLBACKS OR REDIRECT URLS, THIS BREAKS THE AUTH
-                    const redirectUrl = window.location.origin + '/dashboard';
-                    window.location.href = `https://auth.emergentagent.com/?redirect=${encodeURIComponent(redirectUrl)}`;
+                    const redirectUrl = window.location.pathname;
+                    window.location.href = `${process.env.REACT_APP_BACKEND_URL}/api/auth/login/google?redirect=${encodeURIComponent(redirectUrl)}`;
                   }}
                   className="w-full btn-volt h-12 font-heading text-xs font-bold tracking-wider"
                   data-testid="login-to-join-btn"
