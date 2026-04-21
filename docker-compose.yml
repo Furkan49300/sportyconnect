@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:6-jammy
+    container_name: sportyconnect_db
+    restart: unless-stopped
+    ports:
+      - "27017:27017" # Exposed to local machine for easy access (optional in prod)
+    volumes:
+      - mongodb_data:/data/db
+
+  backend:
+    build:
+      context: ./backend
+    container_name: sportyconnect_backend
+    restart: unless-stopped
+    environment:
+      # Use the docker service name "mongodb" to connect to the DB
+      - MONGO_URL=mongodb://mongodb:27017
+      - DB_NAME=sportyconnect
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongodb
+    volumes:
+      # Optional: bind mount the uploads directory if you need persistence
+      - ./backend/uploads:/app/uploads
+
+  frontend:
+    build:
+      context: ./frontend
+      # Pass the backend URL through docker-compose args at build-time
+      args:
+        # Use http://localhost:8000 for local testing or your actual domain in prod
+        - REACT_APP_BACKEND_URL=http://localhost:8000 
+    container_name: sportyconnect_frontend
+    restart: unless-stopped
+    ports:
+      - "3000:80" # Exposed on port 3000 via Nginx container (port 80)
+    depends_on:
+      - backend
+
+volumes:
+  mongodb_data:

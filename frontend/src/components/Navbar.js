@@ -84,9 +84,8 @@ export default function Navbar() {
             ) : (
               <button
                 onClick={() => {
-                  // REMINDER: DO NOT HARDCODE THE URL, OR ADD ANY FALLBACKS OR REDIRECT URLS, THIS BREAKS THE AUTH
-                  const redirectUrl = window.location.origin + '/dashboard';
-                  window.location.href = `https://auth.emergentagent.com/?redirect=${encodeURIComponent(redirectUrl)}`;
+                  const redirectUrl = window.location.origin + '/callback';
+                  window.location.href = `${process.env.REACT_APP_BACKEND_URL || 'http://localhost:8000'}/api/auth/google/login?redirect=${encodeURIComponent(redirectUrl)}`;
                 }}
                 className="btn-volt h-10 px-6 text-xs font-heading font-bold tracking-wider"
                 data-testid="nav-login-btn"
@@ -117,9 +116,8 @@ export default function Navbar() {
           ) : (
             <button
               onClick={() => {
-                // REMINDER: DO NOT HARDCODE THE URL, OR ADD ANY FALLBACKS OR REDIRECT URLS, THIS BREAKS THE AUTH
                 const redirectUrl = window.location.origin + '/dashboard';
-                window.location.href = `https://auth.emergentagent.com/?redirect=${encodeURIComponent(redirectUrl)}`;
+                window.location.href = `${process.env.REACT_APP_BACKEND_URL || 'http://localhost:8000'}/api/auth/google/login?redirect=${encodeURIComponent(redirectUrl)}`;
               }}
               className="btn-volt w-full h-10 text-xs font-heading font-bold tracking-wider"
               data-testid="mobile-login-btn"
