@@ -3,6 +3,8 @@ import { useAuth } from '../contexts/AuthContext';
 import { ArrowRight, Users, MessageCircle, Target, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
 
+import { BACKEND_URL } from '../lib/api';
+
 const SPORTS_LIST = [
   { name: 'Tennis', emoji: '🎾' }, { name: 'Football', emoji: '⚽' },
   { name: 'Basketball', emoji: '🏀' }, { name: 'Volleyball', emoji: '🏐' },
@@ -68,7 +70,7 @@ export default function Landing() {
               <button
                 onClick={() => {
                   const redirectUrl = '/dashboard';
-                  window.location.href = `${process.env.REACT_APP_BACKEND_URL}/api/auth/login/google?redirect=${encodeURIComponent(redirectUrl)}`;
+                  window.location.href = `${BACKEND_URL}/api/auth/login/google?redirect=${encodeURIComponent(redirectUrl)}`;
                 }}
                 className="btn-volt h-14 px-10 text-sm font-heading font-bold tracking-wider flex items-center gap-2 mx-auto"
                 data-testid="hero-join-btn"
@@ -150,7 +152,7 @@ export default function Landing() {
               <button
                 onClick={() => {
                   const redirectUrl = '/dashboard';
-                  window.location.href = `${process.env.REACT_APP_BACKEND_URL}/api/auth/login/google?redirect=${encodeURIComponent(redirectUrl)}`;
+                  window.location.href = `${BACKEND_URL}/api/auth/login/google?redirect=${encodeURIComponent(redirectUrl)}`;
                 }}
                 className="btn-volt h-14 px-10 text-sm font-heading font-bold tracking-wider"
                 data-testid="cta-signup-btn"

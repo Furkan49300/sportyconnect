@@ -1,6 +1,12 @@
 import axios from 'axios';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+// Automatically construct the backend URL using the current host if the IP is used instead of localhost
+let backendUrl = process.env.REACT_APP_BACKEND_URL;
+if (backendUrl === 'http://localhost:8000' && window.location.hostname !== 'localhost') {
+  backendUrl = `${window.location.protocol}//${window.location.hostname}:8000`;
+}
+
+export const BACKEND_URL = backendUrl;
 const API = `${BACKEND_URL}/api`;
 
 const api = axios.create({

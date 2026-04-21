@@ -34,7 +34,7 @@ export default function ActivityDetail() {
   const wsRef = useRef(null);
   const messagesEndRef = useRef(null);
 
-  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+  const BACKEND_URL = BACKEND_URL;
   const getImageUrl = (url) => {
     if (!url) return '';
     if (url.startsWith('http')) return url;
@@ -370,7 +370,7 @@ export default function ActivityDetail() {
                 <button
                   onClick={() => {
                     const redirectUrl = window.location.pathname;
-                    window.location.href = `${process.env.REACT_APP_BACKEND_URL}/api/auth/login/google?redirect=${encodeURIComponent(redirectUrl)}`;
+                    window.location.href = `${BACKEND_URL}/api/auth/login/google?redirect=${encodeURIComponent(redirectUrl)}`;
                   }}
                   className="w-full btn-volt h-12 font-heading text-xs font-bold tracking-wider"
                   data-testid="login-to-join-btn"
